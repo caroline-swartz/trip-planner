@@ -1,0 +1,27 @@
+<h1>New Trip</h1>
+
+<%= form_with scope: :trip, url: trips_path, local: true do |form| %>
+  <p>
+    <%= form.label :destination %><br>
+    <%= form.text_field :destination %>
+  </p>
+
+  <p>
+    <%= form.label :start_date %><br>
+    <%= form.text_field :start_date %>
+  </p>
+
+  <p>
+    <%= form.label :end_date %><br>
+    <%= form.text_field :end_date %>
+  </p>
+
+  <p>
+    <%= form.label :budget %><br>
+    <%= form.text_field :budget %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
