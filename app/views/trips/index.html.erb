@@ -23,13 +23,15 @@
   <body>
     <h1>Here are all your upcoming trips</h1>
 
-<div class="grid-container">
-  <% @trips.each do |trip| %>
-  <div class ="grid-item"><%= trip.destination %>
-    <br /><%= link_to 'Details', trip_path(trip) %>
-    <br /><%= link_to 'Edit', edit_trip_path(trip) %>
-    <br /><%= link_to 'Delete', trip_path(trip),
-    method: :delete, data: {confirm: 'Are you sure?'} %></div>
+    <div class="grid-container">
+      <% @trips.each do |trip| %>
+      <div class ="grid-item"><%= trip.destination %>
+        <br /><%= link_to 'Details', trip_path(trip) %>
+        <br /><%= link_to 'Edit', edit_trip_path(trip) %>
+        <br /><%= link_to 'Delete', trip_path(trip),
+        method: :delete, data: {confirm: 'Are you sure?'} %></div>
 
-  <% end %>
-  </div>
+      <% end %>
+    </div>
+  </body>
+</html>
