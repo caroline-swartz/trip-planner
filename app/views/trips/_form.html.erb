@@ -5,9 +5,8 @@
     <title></title>
   </head>
   <body>
-    <h1>New Trip</h1>
 
-    <%= form_with @trip true do |form| %>
+    <%= form_with model: @trip, local: true do |form| %>
 
       <% if @trip.errors.any? %>
         <div id="error_explanation">
@@ -47,6 +46,5 @@
       </p>
 
     <% end %>
-    <%= link_to 'All Trips', trips_path %>
   </body>
 </html>

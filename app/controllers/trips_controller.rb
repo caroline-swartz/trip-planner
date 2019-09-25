@@ -24,24 +24,6 @@ class TripsController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
-    def update
-      @trip = Trip.find(params[:id])
-
-      if @trip.update(trip_params)
-        redirect_to @trip
-      else
-        render 'edit'
-      end
-    end
-
-    def destroy
-      @trip = Trip.find(params[:id])
-      @trip.destroy
-
-      redirect_to trips_path
-    end
-=======
   def update
     @trip = Trip.find(params[:id])
 
@@ -51,7 +33,23 @@ class TripsController < ApplicationController
       render 'edit'
     end
   end
->>>>>>> d4a4761d9738fb70caa2bf1804b6eb9783d06e0d
+
+  def destroy
+    @trip = Trip.find(params[:id])
+    @trip.destroy
+
+    redirect_to trips_path
+  end
+
+  def update
+    @trip = Trip.find(params[:id])
+
+    if @trip.update(trip_params)
+      redirect_to @trip
+    else
+      render 'edit'
+    end
+  end
 
   private
   def trip_params
