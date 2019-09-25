@@ -1,10 +1,27 @@
-<h1>Here are all your upcoming trips</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  grid-gap: 50px 50px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 30px;
+}
+</style>
+</head>
+<body><h1>Here are all your upcoming trips</h1>
 
-<table>
+<div class="grid-container">
   <% @trips.each do |trip| %>
-  <tr>
-    <td><%= trip.destination %></td>
-    <td><%= link_to 'Show', trip_path(trip) %></td>
-  </tr>
+  <div class ="grid-item"><%= trip.destination %><br /><%= link_to 'Details', trip_path(trip) %></div>
   <% end %>
-</table>
+  </div>
