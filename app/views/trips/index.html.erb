@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-<style>
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 10px;
-  grid-gap: 50px 50px;
-}
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 30px;
-  font-size: 30px;
-  text-align: center;
-  border-radius: 30px;
-}
-</style>
-</head>
-<body><h1>Here are all your upcoming trips</h1>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      padding: 10px;
+      grid-gap: 50px 50px;
+    }
+    .grid-item {
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      font-size: 30px;
+      text-align: center;
+      border-radius: 30px;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Here are all your upcoming trips</h1>
 
+<<<<<<< HEAD
 <div class="grid-container">
   <% @trips.each do |trip| %>
   <div class ="grid-item"><%= trip.destination %>
@@ -30,3 +34,15 @@
 
   <% end %>
   </div>
+=======
+    <div class="grid-container">
+      <% @trips.each do |trip| %>
+      <div class ="grid-item"><%= trip.destination %>
+        <br /><%= link_to 'Details', trip_path(trip) %>
+        <br /><%= link_to 'Edit', edit_trip_path(trip) %>
+      </div>
+      <% end %>
+      </div>
+  </body>
+</html>
+>>>>>>> d4a4761d9738fb70caa2bf1804b6eb9783d06e0d

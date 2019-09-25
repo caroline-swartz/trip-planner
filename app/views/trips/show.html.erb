@@ -1,18 +1,26 @@
-<p>
-  <strong>Destination:</strong>
-  <%= @trip.destination %>
-</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>
+      <strong>Destination:</strong>
+      <%= @trip.destination %>
+    </p>
 
-<p>
-  <strong>Start Date:</strong>
-  <%= @trip.start_date %>
-</p>
+    <p>
+      <strong>Start Date:</strong>
+      <%= @trip.start_date %>
+    </p>
 
-<p>
-  <strong>End Date:</strong>
-  <%= @trip.end_date %>
-</p>
+    <p>
+      <strong>End Date:</strong>
+      <%= @trip.end_date %>
+    </p>
 
+<<<<<<< HEAD
 <p>
   <strong>Budget:</strong>
   $<%= @trip.budget %>
@@ -20,3 +28,14 @@
 
 <%= link_to 'Edit', edit_trip_path(@trip) %> |
 <%= link_to 'Back', trip_path %>
+=======
+    <p>
+      <strong>Budget:</strong>
+      $<%= @trip.budget %>
+    </p>
+
+    <%= link_to 'Edit', edit_trip_path(@trip) %> |
+<%= link_to 'Back', trips_path %>
+  </body>
+</html>
+>>>>>>> d4a4761d9738fb70caa2bf1804b6eb9783d06e0d
