@@ -11,12 +11,26 @@ class TripsController < ApplicationController
     @trip = Trip.new
   end
 
+  def edit
+    @trip = Trip.find(params[:id])
+  end
+
   def create
     @trip = Trip.new(trip_params)
     if @trip.save
       redirect_to @trip
     else
       render 'new'
+    end
+  end
+
+  def update
+    @trip = Trip.find(params[:id])
+
+    if @trip.update(trip_params)
+      redirect_to @trip
+    else
+      render 'edit'
     end
   end
 
