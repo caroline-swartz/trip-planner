@@ -3,29 +3,64 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+        grid-gap: 50px 50px;
+        text-align: center;
+        align-items: center;
+      }
+      .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 30px;
+        font-size: 30px;
+        text-align: center;
+        border-radius: 30px;
+      }
+    </style>
   </head>
   <body>
-    <p>
+    <p style="text-align:center;">
       <strong>Destination:</strong>
       <%= @trip.destination %>
     </p>
 
-    <p>
-      <strong>Start Date:</strong>
-      <%= @trip.start_date %>
+    <p style="text-align:center;">
+      <%= @trip.start_date %> - <%= @trip.end_date %>
     </p>
 
-    <p>
-      <strong>End Date:</strong>
-      <%= @trip.end_date %>
-    </p>
-
-    <p>
+    <p style="text-align:center;">
       <strong>Budget:</strong>
       $<%= @trip.budget %>
     </p>
 
-    <%= link_to 'Edit', edit_trip_path(@trip) %>
-    <%= link_to 'Back', trips_path %>
+    <p style="text-align:center;">
+      <%= link_to 'Edit', edit_trip_path(@trip) %>
+        <%= link_to 'All Trips', trips_path %>
+    </p>
+
+
+
+
+    <div class="grid-container">
+      <% @trip.stops.each do |stop| %>
+      <div class="grid-item"><%= stop.destination %>
+        <br/><%= stop.start_date %> - <%= stop.end_date %>
+        <br/><a href="<%= stop.accommodation %>">Airbnb</a>
+        <br/> Total cost: <%= stop.cost %>
+        <br/><%= link_to 'Delete', [stop.trip, stop],
+                 method: :delete,
+                 data: { confirm: 'Are you sure?' } %></div>
+      <% end %>
+
+      <div class="grid-item" >
+      <a href="<%= new_trip_stop_path(@trip) %>">Add Stop</a>
+      </div>
+    </div>
+
   </body>
 </html>

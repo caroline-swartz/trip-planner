@@ -9,6 +9,7 @@
         grid-template-columns: auto auto auto;
         padding: 10px;
         grid-gap: 50px 50px;
+        align-items: center;
       }
       .grid-item {
         background-color: rgba(255, 255, 255, 0.8);
@@ -21,6 +22,7 @@
     </style>
   </head>
   <body>
+
     <h1>Here are all your upcoming trips</h1>
 
     <div class="grid-container">
@@ -31,7 +33,10 @@
           <br/><%= link_to 'Delete', trip_path(trip), method: :delete, data: {confirm: 'Are you sure?'} %></div>
 
       <% end %>
+      <div class="grid-item">
+        <%= link_to 'New Trip', new_trip_path %>
+        </div>
     </div>
-    <%= link_to 'New Trip', new_trip_path %>
+
   </body>
 </html>

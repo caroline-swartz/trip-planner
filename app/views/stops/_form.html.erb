@@ -1,0 +1,26 @@
+<%= form_with(model: [@trip, @stop], url: trip_stops_path(params[:trip_id]), local: true) do |form| %>
+  <p>
+    <%= form.label :destination %><br>
+    <%= form.text_field :destination %>
+  </p>
+  <p>
+    <%= form.label :start_date %><br>
+    <%= form.text_field :start_date %>
+  </p>
+  <p>
+    <%= form.label :end_date %><br>
+    <%= form.text_field :end_date %>
+  </p>
+  <p>
+    <%= form.label :where_are_you_staying? %><br>
+    <%= form.text_field :accommodation %>
+  </p>
+  <p>
+    <%= form.label :cost %><br>
+    <%= form.text_field :cost %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
